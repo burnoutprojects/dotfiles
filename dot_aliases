@@ -44,12 +44,16 @@ alias download="wget --no-check-certificate -O $1 $2"
 
 alias open="xdg-open &>/dev/null"
 
-# alias yarn="corepack yarn"
-# alias yarnpkg="corepack yarnpkg"
-# alias pnpm="corepack pnpm"
-# alias pnpx="corepack pnpx"
-# alias npm="corepack npm"
-# alias npx="corepack npx"
+###########################
+#  node package managers  #
+###########################
+
+alias yarn="corepack yarn"
+alias yarnpkg="corepack yarnpkg"
+alias pnpm="corepack pnpm"
+alias pnpx="corepack pnpx"
+alias npm="corepack npm"
+alias npx="corepack npx"
 
 ###########
 #   zsh   #
