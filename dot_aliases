@@ -1,0 +1,80 @@
+#
+# ~/.aliases
+#
+
+# sudo
+alias sudo="sudo "
+
+# ls customization
+alias ls="lsd"
+alias ll="lsd --long --group-dirs=first"
+alias lla="lsd --long --all --group-dirs=first"
+alias lt="lsd --tree"
+alias llt="lsd --tree --all"
+alias la="lsd --all"
+
+# cp & mv costomization
+if [ -f "$(which advcp)" ]; then
+  alias cp="/usr/bin/advcp -gR"
+fi
+if [ -f "$(which advmv)" ]; then
+  alias mv="/usr/bin/advmv -g"
+fi
+
+# Alias for vscode
+if [ -f "$(which vscodium)" ]; then
+  alias code="vscodium"
+fi
+
+# Alias for youtube-dlp
+if [ -f "$(which yt-dlp)" ]; then
+  alias yt-mp3="yt-dlp --format bestaudio --audio-format mp3 --audio-quality 160K --embed-thumbnail -cixo \"%(artist)s - %(track)s.%(ext)s\" --metadata-from-title \"%(artist)s - %(track)s\" --yes-playlist"
+fi
+
+# Read and write from/to clipboard aliases
+if [ -f "$(which xclip)" ]; then
+  alias setclip="xclip -selection c"
+  alias getclip="xclip -selection c -o"
+fi
+
+# nano with line numbers and mouse integration alias
+alias nano="nano -ml"
+
+alias download="wget --no-check-certificate -O $1 $2"
+
+alias open="xdg-open &>/dev/null"
+
+# alias yarn="corepack yarn"
+# alias yarnpkg="corepack yarnpkg"
+# alias pnpm="corepack pnpm"
+# alias pnpx="corepack pnpx"
+# alias npm="corepack npm"
+# alias npx="corepack npx"
+
+###########
+#   zsh   #
+###########
+
+# Terminal configuration shortcuts
+alias zshconfig="code -r $HOME/.zshrc"
+alias ohmyzsh="code -r $HOME/.oh-my-zsh"
+alias aliasconfig="code -r $HOME/.aliases"
+
+# Reload zsh to apply changes
+alias reload="exec zsh"
+
+# VSCode
+alias vsr="code -r"
+alias vsn="code -n"
+
+###############
+#  arch only  #
+###############
+
+if [ -f "$(which yay)" ]; then
+  # Show all available updates
+  alias showupdates="yay -Sy && yay -Qu"
+
+  # Update the system w/out confirm (use sudoloop flag)
+  alias updatesystem="yay -Syu --sudoloop --noconfirm"
+fi
